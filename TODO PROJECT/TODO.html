@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            width: 50%;
+            height: 100px;
+            margin: auto;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        #task{
+            height: 35px;
+            margin-top: 10px;
+            width: 90%;
+        }
+        #add{
+            margin-top: 15px;
+            width: 120px;
+            height: 35px;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            justify-self: center;
+            background-color: aquamarine;
+            border: 2px solid black;
+            width: 50%;
+
+        }
+        .tasks{
+            width: 90%;
+            /* height: 100px; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: antiquewhite;
+            border: 2px solid black;
+            margin: 5px;
+            padding: 10px 15px;
+            position: relative;
+        }
+        .menu-btn{
+            display: flex;
+            border: none;
+            background: transparent;
+            font-size: 22px;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .popup{
+            position: absolute;
+            right: 10px;
+            top: 100%;
+            display: none;
+            width: 150px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            z-index: 100;
+        }
+        .popup.show{
+            display: block;
+        }
+        .popup button{
+            width: 100%;
+            border: none;
+            background: white;
+            padding: 12px;
+            text-align: left;
+            cursor: pointer;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><center>TO DO LIST</center></h1>
+    </header>
+    <main>
+        <h2><center>Please enter your Tasks Below</center></h2>
+        <form action="" method="POST">
+            <input type="text" task="" placeholder="Enter your task here" id="task">
+            <button id="add">ADD</button>
+        </form>
+        <hr>
+        <div class="container">
+             
+        </div>
+    </main>
+    <hr>
+    
+</body>
+<script>
+    let arrayOfTask=[];
+    const container = document.querySelector(".container");
+    const form=document.querySelector("form");
+    const newtask=document.querySelector("#task");
+    form.addEventListener('submit',(event)=>{
+        event.preventDefault();
+
+        arrayOfTask.push(newtask.value)
+        console.log(arrayOfTask)
+
+        let newdiv=document.createElement('div');
+        newdiv.innerHTML=`
+        <h3>${newtask.value}</h3>
+        <button class="menu-btn">⋮</button>
+
+        <div class="popup">
+            <button class="edit">Edit</button>
+            <button class="remove">Remove</button>
+        </div>
+
+        <div class="scroll">
+            <button class="up">^</button>
+            <button class="down">⌄</button>
+        </div>
+        `
+        newdiv.classList.add("tasks")
+        container.appendChild(newdiv)
+        form.reset()
+
+
+        
+
+    })
+    
+    container.addEventListener('click',(event)=>{
+        if(event.target.classList.contains('menu-btn')){
+            let task = event.target.parentElement;
+            let popup = task.querySelector('.popup')
+            popup.style.display='block';
+        }
+        if(event.target.classList.contains('edit')){
+            let task = event.target.parentElement.parentElement;
+            let h3 = task.querySelector('h3')
+            let inp = prompt("Enter your new task",h3.innerText)
+            h3.innerText=inp;
+            let popup = task.querySelector('.popup')
+            popup.style.display='none'
+        }
+        if(event.target.classList.contains('remove')){
+            let task = event.target.parentElement.parentElement;
+            task.remove();
+            let popup = task.querySelector('.popup')
+            popup.style.display='none'
+        }
+        if(event.target.classList.contains('up')){
+            let task = event.target.parentElement.parentElement;
+            let allTask = container.querySelectorAll('.tasks');
+            for(let i=0;i<allTask.length;i++){
+                if(allTask[i] === task){
+                    if(i>0){
+                        container.insertBefore(task, allTask[i-1])
+                    }
+                }
+            }
+        }
+        if(event.target.classList.contains('down')){
+            let task = event.target.parentElement.parentElement;
+            let allTask = container.querySelectorAll('.tasks');
+            for(let i=0;i<allTask.length;i++){
+                if(allTask[i] === task){
+                    if(i<allTask.length-1){
+                        container.insertBefore(allTask[i+1], task)
+                    }
+                }
+            }
+        }
+    })
+    
+</script>
+</html>
