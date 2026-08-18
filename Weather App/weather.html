@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Weather App</h1>
+
+        <input type="text" id="city" placeholder="Enter City">
+
+        <br><br>
+
+        <button onclick="getWeather()">Search</button>
+
+        <div id="result">
+
+            <h2 id="cityName"></h2>
+
+            <h3 id="temperature"></h3>
+
+            <p id="weather"></p>
+
+            <p>Humidity : <span id="humidity"></span></p>
+
+            <p>Wind Speed : <span id="wind"></span></p>
+
+        </div>
+
+    </div>
+
+    <script src="weather.js"></script>
+
+</body>
+</html>
