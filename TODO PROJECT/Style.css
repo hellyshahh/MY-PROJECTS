@@ -1,0 +1,76 @@
+form{
+            width: 50%;
+            height: 100px;
+            margin: auto;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        #task{
+            height: 35px;
+            margin-top: 10px;
+            width: 90%;
+        }
+        #add{
+            margin-top: 15px;
+            width: 120px;
+            height: 35px;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            justify-self: center;
+            background-color: aquamarine;
+            border: 2px solid black;
+            width: 50%;
+
+        }
+        .tasks{
+            width: 90%;
+            /* height: 100px; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: antiquewhite;
+            border: 2px solid black;
+            margin: 5px;
+            padding: 10px 15px;
+            position: relative;
+        }
+        .menu-btn{
+            display: flex;
+            border: none;
+            background: transparent;
+            font-size: 22px;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .popup{
+            position: absolute;
+            right: 10px;
+            top: 100%;
+            display: none;
+            width: 150px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            z-index: 100;
+        }
+        .popup.show{
+            display: block;
+        }
+        .popup button{
+            width: 100%;
+            border: none;
+            background: white;
+            padding: 12px;
+            text-align: left;
+            cursor: pointer;
+            font-size: 15px;
+        }
