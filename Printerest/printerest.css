@@ -1,0 +1,94 @@
+*{
+    margin:0;
+    padding: 0;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+.leftnav{
+    display: flex;
+}
+.leftnav>img{
+    height: 100px;
+    width: 150px;
+}
+.leftnav>a{
+    text-decoration: none;
+    margin-top: 40px;
+    margin-left: 50px;
+    color: black;
+    font-weight: 700;
+}
+.rightnav{
+    margin-right: 20px;
+}
+button{
+    margin-top:10px;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 5px;
+    border: 0;
+}
+.red{
+    background-color: red;
+    color: white;
+}
+.white{
+    background-color: rgb(199,199,199);
+}
+.hero-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-section{
+    padding: 20px;
+}
+.line-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.line-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.line-3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sec-1{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+}
+.left-main>img{
+    height: 500px;
+    border-radius: 25px;
+}
+.right-main{
+    margin-top:150px;
+}
+.right-line-1{
+    margin-top: 15px;
+}
+.right-line-2{
+    margin-top: 15px;
+}
+.right-main>button{
+    margin-top:15px
+}
