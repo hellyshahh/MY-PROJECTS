@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f4f7fb;
+    padding: 20px;
+}
+
+form {
+    width: 450px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+form p {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+button {
+    width: 70%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #4cb1d3;
+    color: black;
+    font-size: 16px;
+    transition: .3s;
+}
+
+button:hover {
+    background: #3578d6;
+}
+
+hr {
+    margin: 40px 0;
+    border: none;
+    border-top: 2px solid #ddd;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards,
+.cards_unchecked {
+    width: 260px;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.cards {
+    background-color: rgb(176, 255, 130);
+}
+
+.cards_unchecked {
+    background-color: rgb(241, 103, 56);
+}
+
+.cards:hover,
+.cards_unchecked:hover {
+    transform: scale(1.03);
+}
+
+.cards button {
+    margin-top: 8px;
+    background: white;
+    color: #00b894;
+    font-weight: bold;
+}
+
+.cards button:hover {
+    background: #eee;
+}
